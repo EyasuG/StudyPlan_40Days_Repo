@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PL-400 + MB-300 Study Plan (40 Days)</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header>
+    <h1>PL-400 + MB-300 Study Plan</h1>
+    <div class="actions">
+      <a class="btn" href="README.md">README</a>
+      <a class="btn" href="QuickStart.md">QuickStart</a>
+      <button id="themeToggle">Toggle Theme</button>
+    </div>
+  </header>
+  <main>
+    <section>
+      <p>This is a GitHub-ready export of your 40-day study plan. Click a day to open its content.</p>
+      <ol id="days"></ol>
+      <div class="downloads">
+        <h3>Downloads</h3>
+        <ul>
+          <li><a href="content/STUDYPLAN_40Days_Notion.md">Notion Import (Markdown)</a></li>
+          <li><a href="content/STUDYPLAN_40Days_Notion.json">Notion Structure (JSON)</a></li>
+          <li><a href="content/STUDYPLAN_Flashcards_40Days.csv">Flashcards CSV (~1,200)</a></li>
+          <li><a href="Capstone_DemoScript.md">Capstone_DemoScript.md</a></li>
+          <li><a href="Quick_Reference_CheatSheet.md">Quick_Reference_CheatSheet.md</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <script src="scripts/theme.js"></script>
+  <script>
+    const list = document.getElementById('days');
+    for (let i=1; i<=40; i++) {
+      const li = document.createElement('li');
+      const day = String(i).padStart(2,'0');
+      const a = document.createElement('a');
+      a.href = `content/Day${day}.md`;
+      a.textContent = `Day ${i}`;
+      li.appendChild(a);
+      list.appendChild(li);
+    }
+  </script>
+</body>
+</html>
